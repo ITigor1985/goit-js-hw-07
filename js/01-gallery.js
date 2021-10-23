@@ -9,11 +9,10 @@ const galleryImages = galleryItems.map(galleryItem => `
     class="gallery__image"
     src=${galleryItem.preview}
     data-source=${galleryItem.original}
-    alt=${galleryItem.description}
+    alt="${galleryItem.description}"
   />
 </a>
 </div>`).join('')
-console.log(galleryImages);
 gallery.insertAdjacentHTML("beforeend", galleryImages);
 
 gallery.addEventListener("click", selectImage)
@@ -24,8 +23,23 @@ function selectImage(event){
         return;
       }
       const selectedImage = event.target.dataset.source;
-      const instance = basicLightbox.create(`<img src="${selectedImage}">`)
+      const instance = basicLightbox.create(`<img src="${selectedImage}" alt="${event.target.alt}">`)
 
-        instance.show()
+        instance.show();
+
+
+          document.addEventListener("keyup", event => {
+          const imgVisible = document.querySelector(".basicLightbox--visible")
+          console.log(imgVisible);
+          if(event.code==="Escape" && imgVisible!==null){
+            imgVisible.remove();
+          }
+        });        
 
 }
+
+
+
+
+
+//basicLightbox--visible
