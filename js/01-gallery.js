@@ -28,13 +28,13 @@ function selectImage(event){
         instance.show();
 
 
-          document.addEventListener("keyup", event => {
-          const imgVisible = document.querySelector(".basicLightbox--visible")
-          console.log(imgVisible);
-          if(event.code==="Escape" && imgVisible!==null){
-            imgVisible.remove();
-          }
-        });        
+        //   document.addEventListener("keyup", event => {
+        //   const imgVisible = document.querySelector(".basicLightbox--visible")
+        //   console.log(imgVisible);
+        //   if(event.code==="Escape" && imgVisible!==null){
+        //     imgVisible.remove();
+        //   }
+        // });        
 
 }
 
